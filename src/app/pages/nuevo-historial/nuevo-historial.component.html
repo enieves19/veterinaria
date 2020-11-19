@@ -1,0 +1,181 @@
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid animated fadeIn">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="row page-titles">
+            <div class="col-md-5 align-self-center">
+                <h3 class="text-themecolor">Nuevo Registro Clínico </h3>
+            </div>                
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-12">
+                    <div class="form-group row" >
+                        <label for="example-text-input" class="col-2 col-form-label">Nombre Del Cliente : </label>
+                        <div class="col-5">
+                            <select class="form-control" [(ngModel)]="newhistorial.idpaciente">
+                                    <option *ngFor="let datos of pacientes" value="{{datos.idpaciente}}">{{datos.nompaciente}}</option>
+                            </select>                            
+                        </div>
+                        <label for="example-search-input" class="col-1 col-form-label"></label>
+                        <div class="col-4">
+                            <input class="form-control" type="hidden" name="newhistorial.fechahistorial"  ngModel="{{newhistorial.fechahistorial}}"  >
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-search-input" class="col-2 col-form-label" >Nombre Mascota</label>
+                        <div class="col-10">
+                            <input class="form-control" type="text" name="newhistorial.nombremascotahistorial" [(ngModel)]="newhistorial.nombremascotahistorial" >
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-search-input" class="col-2 col-form-label">Especie</label>
+                        <div class="col-4">
+                            <input class="form-control" type="text" name="newhistorial.especiehistorial" [(ngModel)]="newhistorial.especiehistorial" >
+                        </div>
+                        <label for="example-search-input" class="col-2 col-form-label">Raza</label>
+                        <div class="col-4">
+                            <input class="form-control" type="text" name="newhistorial.razahistorial" [(ngModel)]="newhistorial.razahistorial" >
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-search-input" class="col-2 col-form-label">Peso</label>
+                        <div class="col-4">
+                            <input class="form-control" type="text" name="newhistorial.pesohistorial" [(ngModel)]="newhistorial.pesohistorial" >
+                        </div>
+                        <label for="example-search-input" class="col-2 col-form-label">Sexo</label>
+                        <div class="col-4">
+                            <select class="form-control" name="newhistorial.sexohistorial" [(ngModel)]="newhistorial.sexohistorial">
+                                <optgroup label="Sexo:">
+                                  <option value="Sin Especificar">Sin Especificar</option>
+                                  <option value="Macho">Macho</option>
+                                  <option value="Hembra">Hembra</option>
+                                </optgroup>
+                              </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-search-input" class="col-2 col-form-label">Edad</label>
+                        <div class="col-4">
+                            <input class="form-control" type="text" name="newhistorial.edadhistorial" [(ngModel)]="newhistorial.edadhistorial" >
+                        </div>
+                        <label for="example-search-input" class="col-2 col-form-label">Temperatura</label>
+                        <div class="col-4">
+                            <input class="form-control" type="text" name="newhistorial.temphistorial" [(ngModel)]="newhistorial.temphistorial" >
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                    <button type="button" (click)="mostrar = !mostrar" class=" btn btn-outline-primary">Mostrar Mas Datos</button>
+                    </div>
+                    <div *ngIf="mostrar">
+                        
+                        <div class="form-group row">
+                            <label for="example-search-input" class="col-2 col-form-label">Tamaño</label>
+                            <div class="col-10">
+                                    <select class="form-control" name="newhistorial.tamaniohistorial" [(ngModel)]="newhistorial.tamaniohistorial">
+                                        <optgroup selected label="Tamaño">
+                                         <option value="Sin Especificar">Sin Especificar</option>
+                                          <option value="Pequeño">Pequeño</option>
+                                          <option value="Mediano">Mediano</option>
+                                          <option value="Grande">Grande</option>
+                                        </optgroup>
+                                      </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="example-search-input" class="col-2 col-form-label">Estado Reproductivo</label>
+                            <div class="col-10">
+                                <select class="form-control" name="newhistorial.estadoreprohistorial" [(ngModel)]="newhistorial.estadoreprohistorial">
+                                    <optgroup selected label="Estado Reproductivo">
+                                     <option value="Sin Especificar">Sin Especificar</option>
+                                      <option value="Castrado">Castrado</option>
+                                      <option value="Fertil">Fertil</option>
+                                      <option value="Gestacion">Gestación</option>
+                                      <option value="Lactancia">Lactancia</option>
+                                    </optgroup>
+                                  </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="example-search-input" class="col-2 col-form-label">Procedencia</label>
+                            <div class="col-10">
+                                <select class="form-control" name="newhistorial.procedehistorial" [(ngModel)]="newhistorial.procedehistorial">
+                                    <optgroup selected label="Procedencia">
+                                     <option value="Sin Especificar">Sin Especificar</option>
+                                      <option value="Urbana">Urbana</option>
+                                      <option value="Rural">Rural</option>
+                                    </optgroup>
+                                  </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="example-search-input" class="col-2 col-form-label">ALERGIAS</label>
+                            <div class="col-10">
+                                <input class="form-control" type="text" name="newhistorial.alergiashistorial" [(ngModel)]="newhistorial.alergiashistorial" >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>ALIMENTACION</label>
+                            <textarea class="form-control" rows="4" name="newhistorial.alimentahistorial" [(ngModel)]="newhistorial.alimentahistorial"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>VACUNAS</label>
+                            <textarea class="form-control" rows="4" name="newhistorial.vacunashistorial" [(ngModel)]="newhistorial.vacunashistorial" ></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>MOTIVO CONSULTA</label>
+                        <textarea class="form-control" rows="7" name="newhistorial.motivoconsuhistorial" [(ngModel)]="newhistorial.motivoconsuhistorial" ></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>OBSERVACIONES</label>
+                        <textarea class="form-control" rows="8" name="newhistorial.observacioneshistorial" [(ngModel)]="newhistorial.observacioneshistorial"></textarea>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="example-search-input" class="col-2 col-form-label">CITA PROXIMA</label>
+                        <div class="col-10">
+                            <input class="form-control" type="text" name="newhistorial.citahistorial" [(ngModel)]="newhistorial.citahistorial" >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>TRATAMIENTO</label>
+                        <textarea class="form-control" rows="8" name="newhistorial.diagnostico" [(ngModel)]="newhistorial.diagnostico"></textarea>
+                    </div>
+                    <div class="form-group row">
+                        <label for="example-search-input" class="col-2 col-form-label">IDPACIENTE</label>
+                        <div class="col-10">
+                            <input class="form-control" type="text" name="newhistorial.idpaciente" [(ngModel)]="newhistorial.idpaciente" disabled>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button (click)="AltaHistorial();" class="btn btn-success"> <i class="fa fa-check"></i> REGISTRAR HISTORIAL </button> - <button (click)="VerExp(newhistorial.idpaciente);" class="btn btn-success"> <i class="fa fa-check"></i> Seleccionar </button> 
+                        
+                    </div>
+            </div>
+        </div>            
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Page wrapper  -->
+<!-- ============================================================== -->
